@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "FadeUIWidget.h"
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "SceneManager.generated.h"
@@ -31,12 +32,23 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	UPROPERTY(EditAnywhere, Category = "Default")
-	SceneTags BeginScene;
+	UPROPERTY(EditAnywhere, Category = "SceneManager")
+		SceneTags BeginScene;
 
 	UFUNCTION(BlueprintCallable, Category = "SceneManager")
-	void SetScene(SceneTags NextScene);
+		void SetScene();
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FadeWidget")
+		TSubclassOf<UFadeUIWidget> FadeWidget;
+
+	UPROPERTY(BlueprintReadOnly, Category = "FadeWidget")
+		UFadeUIWidget* ptrWidget;
+
+	UFUNCTION(BlueprintCallable, Category = "SceneManager")
+		void SetNextScene(SceneTags scene);
 
 private:
 	SceneTags CurrentScene;
+	SceneTags NextScene;
+
 };

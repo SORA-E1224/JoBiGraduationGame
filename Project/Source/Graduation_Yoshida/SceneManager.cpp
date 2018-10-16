@@ -9,6 +9,7 @@ ASceneManager::ASceneManager()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 	
+	NextScene = SceneTags::ST_None;
 	CurrentScene = SceneTags::ST_None;
 }
 
@@ -17,10 +18,25 @@ void ASceneManager::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	SetScene(BeginScene);
+	if (FadeWidget != nullptr)
+	{
+		ptrWidget = CreateWidget<UFadeUIWidget>(GetWorld(), FadeWidget);
+		if (ptrWidget != nullptr)
+		{
+			ptrWidget->AddToViewport(7);
+		}
+	}
+
+	NextScene = BeginScene;
+	SetScene();
 }
 
-void ASceneManager::SetScene(SceneTags NextScene)
+void ASceneManager::SetNextScene(SceneTags scene)
+{
+	NextScene = scene;
+}
+
+void ASceneManager::SetScene()
 {
 	if (CurrentScene != SceneTags::ST_None)
 	{
@@ -74,5 +90,6 @@ void ASceneManager::SetScene(SceneTags NextScene)
 		FLatentActionInfo LatentInfo;
 		UGameplayStatics::LoadStreamLevel(this, loadSceneName, true, true, LatentInfo);
 		CurrentScene = NextScene;
+		NextScene = SceneTags::ST_None;
 	}
 }

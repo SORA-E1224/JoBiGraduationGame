@@ -14,8 +14,4 @@ class GRADUATION_YOSHIDA_API AGraduation_YoshidaGameModeBase : public AGameModeB
 {
 	GENERATED_BODY()
 	
-	
-private:
-	virtual void BeginPlay() override;
-	
 };
