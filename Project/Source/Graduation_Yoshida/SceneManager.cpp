@@ -27,17 +27,18 @@ void ASceneManager::BeginPlay()
 		}
 	}
 
-	NextScene = BeginScene;
-	SetScene();
+	SetScene(BeginScene);
 }
 
-void ASceneManager::SetNextScene(SceneTags scene)
+void ASceneManager::SetScene(SceneTags scene)
 {
+	if (scene <= SceneTags::ST_None || scene >= SceneTags::ST_MAX)
+	{
+		return;
+	}
+
 	NextScene = scene;
-}
 
-void ASceneManager::SetScene()
-{
 	if (CurrentScene != SceneTags::ST_None)
 	{
 		FName unloadSceneName = "";
@@ -62,10 +63,23 @@ void ASceneManager::SetScene()
 		if (unloadSceneName != "")
 		{
 			FLatentActionInfo LatentInfo;
+			LatentInfo.CallbackTarget = this;
+			LatentInfo.ExecutionFunction = "LoadScene";
+			LatentInfo.UUID = 0;
+			LatentInfo.Linkage = 0;
 			UGameplayStatics::UnloadStreamLevel(this, unloadSceneName, LatentInfo, true);
 		}
+		//LoadScene();
 	}
+	else
+	{
+		LoadScene();
+	}
+	
+}
 
+void ASceneManager::LoadScene()
+{
 	FName loadSceneName = "";
 	switch (NextScene)
 	{

@@ -36,7 +36,7 @@ public:
 		SceneTags BeginScene;
 
 	UFUNCTION(BlueprintCallable, Category = "SceneManager")
-		void SetScene();
+		void SetScene(SceneTags scene);
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FadeWidget")
 		TSubclassOf<UFadeUIWidget> FadeWidget;
@@ -44,10 +44,10 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "FadeWidget")
 		UFadeUIWidget* ptrWidget;
 
-	UFUNCTION(BlueprintCallable, Category = "SceneManager")
-		void SetNextScene(SceneTags scene);
-
 private:
+	UFUNCTION()
+		void LoadScene();
+
 	SceneTags CurrentScene;
 	SceneTags NextScene;
 
