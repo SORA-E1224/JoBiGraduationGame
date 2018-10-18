@@ -13,5 +13,8 @@ UCLASS()
 class GRADUATION_YOSHIDA_API AGraduation_YoshidaGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+public:
+	AGraduation_YoshidaGameModeBase();
 	
 };
