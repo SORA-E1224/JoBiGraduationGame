@@ -2,13 +2,14 @@
 
 #include "SceneManager.h"
 #include "Kismet//GameplayStatics.h"
+#include "GloabalInstance.h"
 
 // Sets default values
 ASceneManager::ASceneManager()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
-	
+
 	NextScene = SceneTags::ST_None;
 	CurrentScene = SceneTags::ST_None;
 }
@@ -17,13 +18,16 @@ ASceneManager::ASceneManager()
 void ASceneManager::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 	if (FadeWidget != nullptr)
 	{
 		ptrWidget = CreateWidget<UFadeUIWidget>(GetWorld(), FadeWidget);
 		if (ptrWidget != nullptr)
 		{
 			ptrWidget->AddToViewport(7);
+			UGloabalInstance* instance = Cast<UGloabalInstance>(GetGameInstance());
+			instance->manager = this;
+			instance->widget = ptrWidget;
 		}
 	}
 
@@ -75,7 +79,7 @@ void ASceneManager::SetScene(SceneTags scene)
 	{
 		LoadScene();
 	}
-	
+
 }
 
 void ASceneManager::LoadScene()

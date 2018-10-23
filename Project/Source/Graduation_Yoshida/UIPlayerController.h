@@ -7,15 +7,15 @@
 #include "UIPlayerController.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class GRADUATION_YOSHIDA_API AUIPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
+
 public:
 	AUIPlayerController();
-	
-	
+
+
 };
