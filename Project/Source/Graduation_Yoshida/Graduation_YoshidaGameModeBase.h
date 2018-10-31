@@ -7,7 +7,7 @@
 #include "Graduation_YoshidaGameModeBase.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class GRADUATION_YOSHIDA_API AGraduation_YoshidaGameModeBase : public AGameModeBase
@@ -16,5 +16,8 @@ class GRADUATION_YOSHIDA_API AGraduation_YoshidaGameModeBase : public AGameModeB
 
 public:
 	AGraduation_YoshidaGameModeBase();
-	
+
+	UPROPERTY(EditAnywhere, Category = "Default")
+		TSubclassOf<APawn> PlayerPawn;
+
 };
