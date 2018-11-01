@@ -7,6 +7,7 @@
 #include "MyPlayerCharacter.generated.h"
 
 DECLARE_DYNAMIC_DELEGATE(FAttackEvent);
+DECLARE_DYNAMIC_DELEGATE(FGuardEvent);
 
 UCLASS()
 class GRADUATION_YOSHIDA_API AMyPlayerCharacter : public ACharacter
@@ -33,5 +34,11 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Events")
 		void CallAttackEvent() { AttackEvent.Execute(); }
+
+	UPROPERTY(BlueprintReadWrite, Category = "Events")
+		FGuardEvent GuardEvent;
+
+	UFUNCTION(BlueprintCallable, Category = "Events")
+		void CallGuardEvent() { GuardEvent.Execute(); }
 
 };
