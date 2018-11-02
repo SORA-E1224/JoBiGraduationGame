@@ -5,7 +5,7 @@
 
 AGraduation_YoshidaGameModeBase::AGraduation_YoshidaGameModeBase()
 {
-	DefaultPawnClass = nullptr;
+	DefaultPawnClass = PlayerPawn;
 	PlayerControllerClass = AUIPlayerController::StaticClass();
 	//PlayerStateClass = nullptr;
 	//GameStateClass = nullptr;
