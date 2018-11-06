@@ -3,19 +3,20 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "InheritedInterface.h"
 #include "GameFramework/PlayerController.h"
 #include "MyPlayerController.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
-class GRADUATION_YOSHIDA_API AMyPlayerController : public APlayerController
+class GRADUATION_YOSHIDA_API AMyPlayerController : public APlayerController//, public IInheritedInterface
 {
 	GENERATED_BODY()
-	
-	
+
+
 public:
-	
-	
+
+
 };

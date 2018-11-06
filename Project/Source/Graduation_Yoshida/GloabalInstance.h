@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "SceneManager.h"
 #include "FadeUIWidget.h"
+#include "InheritedInterface.h"
 #include "Engine/GameInstance.h"
 #include "GloabalInstance.generated.h"
 
@@ -22,5 +23,8 @@ public:
 	
 	UPROPERTY(BlueprintReadOnly, Category = "FadeWidget")
 		UFadeUIWidget* widget;
+
+	UFUNCTION(BlueprintCallable, Category = "MyGame|Damage")
+		int ApplyDamage(AActor* DamagedActor, int BaseDamage, AController* EventInstigator, AActor* DamageCauser, TSubclassOf<class UDamageType> DamageTypeClass);
 	
 };
