@@ -9,8 +9,8 @@
 UENUM(BlueprintType)
 enum class BooleanCode : uint8
 {
-	BC_True UMETA(DisplayName = "True"),
-	BC_False UMETA(DisplayName = "False")
+	BC_True,
+	BC_False
 };
 
 /**
@@ -24,6 +24,9 @@ class GRADUATION_YOSHIDA_API AMyPlayerController : public APlayerController
 
 public:
 	UFUNCTION(BlueprintCallable, Category = "MyGame|Player", meta = (ExpandEnumAsExecs = "code"))
-		void EnemySearch(float radius, ECollisionChannel traceChannel, bool IsVisible, BooleanCode& code, TArray<FHitResult>& outhits);
+		void EnemySearch(UPARAM(ref)AActor*& target, float radius, ECollisionChannel traceChannel, bool IsVisible, BooleanCode& code, TArray<FHitResult>& outhits);
+
+private:
+	void SetTarget(AActor*& target, TArray<FHitResult> const& hits, BooleanCode& code);
 
 };
