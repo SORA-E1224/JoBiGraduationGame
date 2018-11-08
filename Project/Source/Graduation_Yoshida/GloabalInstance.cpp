@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "GloabalInstance.h"
 #include "InheritedInterface.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include "GloabalInstance.h"
 
 
 int UGloabalInstance::ApplyDamage(AActor* DamagedActor, int BaseDamage, AController* EventInstigator, AActor* DamageCauser, TSubclassOf<class UDamageType> DamageTypeClass)

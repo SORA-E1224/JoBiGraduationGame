@@ -3,20 +3,27 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "InheritedInterface.h"
 #include "GameFramework/PlayerController.h"
 #include "MyPlayerController.generated.h"
+
+UENUM(BlueprintType)
+enum class BooleanCode : uint8
+{
+	BC_True UMETA(DisplayName = "True"),
+	BC_False UMETA(DisplayName = "False")
+};
 
 /**
  *
  */
 UCLASS()
-class GRADUATION_YOSHIDA_API AMyPlayerController : public APlayerController//, public IInheritedInterface
+class GRADUATION_YOSHIDA_API AMyPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
 
 public:
-
+	UFUNCTION(BlueprintCallable, Category = "MyGame|Player", meta = (ExpandEnumAsExecs = "code"))
+		void EnemySearch(float radius, ECollisionChannel traceChannel, bool IsVisible, BooleanCode& code, TArray<FHitResult>& outhits);
 
 };
