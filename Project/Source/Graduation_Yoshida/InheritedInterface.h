@@ -14,18 +14,16 @@ class UInheritedInterface : public UInterface
 };
 
 /**
- * 
+ *
  */
 class GRADUATION_YOSHIDA_API IInheritedInterface
 {
 	GENERATED_BODY()
 
-	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
+		// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
-	
-	UFUNCTION(BlueprintImplementableEvent, meta = (DisplayName = "AnyDamage"), Category = "MyEvents|Damage")
-		void ReceiveDamage(int Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
 
-	
+	UFUNCTION(BlueprintImplementableEvent, meta = (DisplayName = "AnyDamage"), Category = "MyGame|Battle")
+		void ReceiveDamage(int Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
 
 };
