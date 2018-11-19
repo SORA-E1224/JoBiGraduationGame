@@ -41,9 +41,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FadeWidget")
 		TSubclassOf<UFadeUIWidget> FadeWidget;
 
-	UPROPERTY(BlueprintReadOnly, Category = "FadeWidget")
-		UFadeUIWidget* ptrWidget;
-
 private:
 	UFUNCTION()
 		void LoadScene();

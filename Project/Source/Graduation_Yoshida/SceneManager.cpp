@@ -21,7 +21,7 @@ void ASceneManager::BeginPlay()
 
 	if (FadeWidget != nullptr)
 	{
-		ptrWidget = CreateWidget<UFadeUIWidget>(GetWorld(), FadeWidget);
+		UFadeUIWidget* ptrWidget = CreateWidget<UFadeUIWidget>(GetWorld(), FadeWidget);
 		if (ptrWidget != nullptr)
 		{
 			ptrWidget->AddToViewport(7);
@@ -73,7 +73,6 @@ void ASceneManager::SetScene(SceneTags scene)
 			LatentInfo.Linkage = 0;
 			UGameplayStatics::UnloadStreamLevel(this, unloadSceneName, LatentInfo, true);
 		}
-		//LoadScene();
 	}
 	else
 	{

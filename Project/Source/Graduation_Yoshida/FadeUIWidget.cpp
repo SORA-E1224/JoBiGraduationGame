@@ -44,12 +44,12 @@ void UFadeUIWidget::NativeTick(const FGeometry & MyGeometry, float InDeltaTime)
 	// Call FadeEndEvent
 	if (CurrentFadeMode == FadeMode::FM_FadeEnd)
 	{
+		CurrentFadeMode = FadeMode::FM_None;
 		if (FadeEndEvent.Delegate.IsBound())
 		{
 			FadeEndEvent.Delegate.Execute();
 			FadeEndEvent.Delegate.Unbind();
 		}
-		CurrentFadeMode = FadeMode::FM_None;
 		return;
 	}
 
