@@ -3,16 +3,22 @@
 	"EngineAssociation": "4.20",
 	"Category": "",
 	"Description": "",
-	"Modules": [
-		{
-			"Name": "Graduation_Yoshida",
-			"Type": "Runtime",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"Engine",
-				"UMG",
-				"BlueprintGraph"
-			]
-		}
-	]
+  "Modules": [
+    {
+      "Name": "Graduation_Yoshida",
+      "Type": "Runtime",
+      "LoadingPhase": "Default",
+      "AdditionalDependencies": [
+        "Engine",
+        "UMG",
+        "BlueprintGraph"
+      ]
+    },
+    {
+      "Name": "Graduation_Yoshida_Editor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    }
+
+  ]
 }

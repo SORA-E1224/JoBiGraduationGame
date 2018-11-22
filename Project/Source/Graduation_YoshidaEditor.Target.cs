@@ -9,6 +9,6 @@ public class Graduation_YoshidaEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 
-		ExtraModuleNames.AddRange( new string[] { "Graduation_Yoshida" } );
+		ExtraModuleNames.AddRange( new string[] { "Graduation_Yoshida", "Graduation_Yoshida_Editor" } );
 	}
 }
