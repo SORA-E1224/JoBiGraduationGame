@@ -19,6 +19,20 @@ uint8 UMyMathFunctionLibrary::SubAssign_Byte(uint8& value, uint8 sub)
 }
 
 FORCEINLINE_DEBUGGABLE
+uint8 UMyMathFunctionLibrary::MinAssign_Byte(uint8& value, uint8 min)
+{
+	value = FMath::Min(value, min);
+	return value;
+}
+
+FORCEINLINE_DEBUGGABLE
+uint8 UMyMathFunctionLibrary::MaxAssign_Byte(uint8& value, uint8 max)
+{
+	value = FMath::Max(value, max);
+	return value;
+}
+
+FORCEINLINE_DEBUGGABLE
 uint8 UMyMathFunctionLibrary::ClampAssign_Byte(uint8& value, uint8 min, uint8 max)
 {
 	value = FMath::Clamp(value, min, max);
@@ -44,6 +58,20 @@ int UMyMathFunctionLibrary::SubAssign_Int(int& value, int sub)
 }
 
 FORCEINLINE_DEBUGGABLE
+int UMyMathFunctionLibrary::MinAssign_Int(int& value, int min)
+{
+	value = FMath::Min(value, min);
+	return value;
+}
+
+FORCEINLINE_DEBUGGABLE
+int UMyMathFunctionLibrary::MaxAssign_Int(int& value, int max)
+{
+	value = FMath::Max(value, max);
+	return value;
+}
+
+FORCEINLINE_DEBUGGABLE
 int UMyMathFunctionLibrary::ClampAssign_Int(int& value, int min, int max)
 {
 	value = FMath::Clamp(value, min, max);
@@ -65,6 +93,20 @@ FORCEINLINE_DEBUGGABLE
 float UMyMathFunctionLibrary::SubAssign_Float(float& value, float sub)
 {
 	value -= sub;
+	return value;
+}
+
+FORCEINLINE_DEBUGGABLE
+float UMyMathFunctionLibrary::MinAssign_Float(float& value, float min)
+{
+	value = FMath::Min(value, min);
+	return value;
+}
+
+FORCEINLINE_DEBUGGABLE
+float UMyMathFunctionLibrary::MaxAssign_Float(float& value, float max)
+{
+	value = FMath::Max(value, max);
 	return value;
 }
 

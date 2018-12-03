@@ -22,7 +22,7 @@ class GRADUATION_YOSHIDA_API UArrayFunctionLibrary : public UBlueprintFunctionLi
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable, Category = "MyArray", meta = (DisplayName = "IsEmpty", ArrayParm = "Array"))
+	UFUNCTION(BlueprintPure, Category = "MyArray", meta = (DisplayName = "IsEmpty", ArrayParm = "Array"))
 		static bool IsEmptyBoolean(const TArray<int32>& Array);
 
 	UFUNCTION(BlueprintCallable, Category = "MyArray", meta = (DisplayName = "IsEmpty", ArrayParm = "Array", ExpandEnumAsExecs = "code"))
