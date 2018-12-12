@@ -21,7 +21,6 @@ class GRADUATION_YOSHIDA_API AMyPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
-
 public:
 	UFUNCTION(BlueprintCallable, Category = "MyGame|Player", meta = (ExpandEnumAsExecs = "code"))
 		void EnemySearch(UPARAM(ref)AActor*& target, float radius, ECollisionChannel traceChannel, bool IsVisible, BooleanCode& code, TArray<FHitResult>& outhits);

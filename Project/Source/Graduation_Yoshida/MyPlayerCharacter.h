@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "AIModule/Classes/GenericTeamAgentInterface.h"
 #include "MyPlayerCharacter.generated.h"
 
 UCLASS()
-class GRADUATION_YOSHIDA_API AMyPlayerCharacter : public ACharacter
+class GRADUATION_YOSHIDA_API AMyPlayerCharacter : public ACharacter, public IGenericTeamAgentInterface
 {
 	GENERATED_BODY()
 
@@ -20,6 +21,11 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
+	UPROPERTY(EditAnywhere, Category = "Team")
+		FGenericTeamId TeamID;
+
+	virtual FGenericTeamId GetGenericTeamId() const override;
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
