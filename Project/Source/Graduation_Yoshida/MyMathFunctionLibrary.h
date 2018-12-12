@@ -80,6 +80,9 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "vector -=", CompactNodeTitle = "-="), Category = "MyMath|Vector")
 		static FVector SubAssign_Vector(UPARAM(ref)FVector& value, FVector sub);
 
+	UFUNCTION(BlueprintPure, meta = (DisplayName = "Distance", CompactNodeTitle = "DISTANCE"), Category = "MyMath|Vector")
+		static float Distance_Vector(const FVector begin, const FVector end);
+
 #pragma endregion
 
 };
