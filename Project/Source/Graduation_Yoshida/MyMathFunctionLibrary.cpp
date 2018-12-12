@@ -135,4 +135,10 @@ FVector UMyMathFunctionLibrary::SubAssign_Vector(FVector& value, FVector sub)
 	return value;
 }
 
+FORCEINLINE_DEBUGGABLE
+float UMyMathFunctionLibrary::Distance_Vector(const FVector begin, const FVector end)
+{
+	return FVector::Distance(begin, end);
+}
+
 #pragma endregion
