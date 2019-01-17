@@ -9,6 +9,6 @@ public class Graduation_YoshidaTarget : TargetRules
 	{
 		Type = TargetType.Game;
 
-		ExtraModuleNames.AddRange( new string[] { "Graduation_Yoshida" } );
+		ExtraModuleNames.Add("Graduation_Yoshida");
 	}
 }

@@ -11,18 +11,12 @@
 			"AdditionalDependencies": [
 				"Engine",
 				"UMG",
-				"BlueprintGraph",
 				"NavigationSystem",
 				"AIModule"
 			]
-		},
-		{
-			"Name": "Graduation_Yoshida_Editor",
-			"Type": "Editor",
-			"LoadingPhase": "Default",
-			"AdditionalDependencies": [
-				"BlueprintGraph"
-			]
 		}
+	],
+	"TargetPlatforms": [
+		"WindowsNoEditor"
 	]
 }
