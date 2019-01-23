@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "FadeUIWidget.h"
+#include "Kismet/GameplayStatics.h"
 
 // Called when Widget Create
 void UFadeUIWidget::NativeConstruct()
@@ -28,6 +29,11 @@ void UFadeUIWidget::NativeConstruct()
 // Called every tick
 void UFadeUIWidget::NativeTick(const FGeometry & MyGeometry, float InDeltaTime)
 {
+	if (UGameplayStatics::IsGamePaused(GetWorld()))
+	{
+		return;
+	}
+
 	Super::NativeTick(MyGeometry, InDeltaTime);
 
 	if (!FadeBackImage)
